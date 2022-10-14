@@ -1,4 +1,3 @@
-import { number } from "https://deno.land/x/cliffy@v0.25.2/flags/types/number.ts";
 import { Adapter, Color, Config } from "../types.ts";
 
 const editTask = (
