@@ -1,5 +1,9 @@
 tasks:
-  default: []
+  default: 
+    - name: v1.0.0
+      tag: cyan
+      completed: false
+      id: 1421
   tascli:
     - name: v1.0.0
       tag: cyan

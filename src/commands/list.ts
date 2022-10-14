@@ -32,7 +32,8 @@ const list = (adapter: Adapter) => {
 
       // print the task
       console.log(
-        " " + color("grey", "[") + (task.completed ? color("green", "*") : " ") +
+        " " + color("grey", "[") +
+          (task.completed ? color("green", "*") : " ") +
           color("grey", "]") + " " +
           ((task.completed) ? color("grey", task.name) : task.name) + spaces +
           color(task.tag, (task.tag !== "default") ? " ⚫" : "") +
