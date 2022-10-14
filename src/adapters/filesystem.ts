@@ -1,9 +1,7 @@
 import {
   parse,
   stringify,
-  Type,
 } from "https://deno.land/std@0.159.0/encoding/yaml.ts?doc=";
-import { ensureFile } from "https://deno.land/std@0.159.0/fs/mod.ts";
 
 import color from "../helpers/colors.ts";
 import { Color, Config, Task } from "../types.ts";
@@ -84,6 +82,38 @@ const filesystemAdapter = {
 
     Deno.writeTextFileSync(fileLocation, stringify(data));
   },
+
+  addProject: (name: string) => {
+    checkFileLocation()
+    const data = parse(Deno.readTextFileSync(fileLocation)) as Config;
+
+    data.tasks[name] = [];
+
+    Deno.writeTextFileSync(fileLocation, stringify(data));
+  },
+
+  deleteProject: (name: string) => {
+    checkFileLocation()
+    const data = parse(Deno.readTextFileSync(fileLocation)) as Config;
+
+    delete data.tasks[name];
+
+    Deno.writeTextFileSync(fileLocation, stringify(data));
+  },
+
+  editProject: (name: string, type: "name", value: string) => {
+    checkFileLocation()
+    const data = parse(Deno.readTextFileSync(fileLocation)) as Config;
+
+    if (name !== value) {
+      // @ts-ignore - I know this is bad practice, but I don't know how to fix it
+      Object.defineProperty(data.tasks, value, Object.getOwnPropertyDescriptor(data.tasks, name));
+      delete data.tasks[name];
+  }
+
+
+    Deno.writeTextFileSync(fileLocation, stringify(data));
+  }
 };
 
 export default filesystemAdapter;

@@ -20,4 +20,7 @@ export type Adapter = {
     getTasks: () => Config;
     deleteTask: (i: number) => void,
     editTask: (id: number, type: "tag" | "name" | "completed", value: string) => void;
+    addProject: (name: string) => void;
+    editProject: (name: string, type: "name", value: string) => void;
+    deleteProject: (name: string) => void;
 }
