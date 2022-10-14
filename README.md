@@ -1,1 +1,1 @@
-# :no_entry_sign: Still in very early alpha
+# :no_entry_sign: Still in early alpha
