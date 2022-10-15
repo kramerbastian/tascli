@@ -12,7 +12,7 @@ Some examples of contributions are:
 
 2. Bugs: Any bug fixes are counted in this section. If you see a new bug, feel free to create a new issue mentioning the problem faced.
 
-3. Feature Requests: If you would like to see some new features around the website, you can always create a new issue mentioning the requested feature.
+3. Feature Requests: If you would like to see some new features around the tool, you can always create a new issue mentioning the requested feature.
 
 **Important:** Every PR must correspond to an issue. If there isn't an issue related to the PR, open a new issue in the Issues section.
 
@@ -24,7 +24,7 @@ You can always seek help and are recommended to discuss the course of action and
 
 ### How to Contribute?
 
-1. Fork this repository and set up the development environment as mentioned [here](README.md).
+1. Fork this repository.
 
 2. Check out to a new branch for the patch.
 
@@ -38,7 +38,7 @@ git checkout -b <branch name>
 
 4. Before committing changes, you should verify if the issue is fixed
 
-5. Commit your changes. Try to follow the [best practices][best_practices] while committing changes.
+5. Commit your changes.
 
 ```bash
 git commit -s
